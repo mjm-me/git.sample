@@ -51,6 +51,23 @@ console.log(newScore) // espero el valor 54
 console.log(otherScore) // espero 27
 
 console.log (newScore > otherScore) // espero true 
-console.log (newScore === otherscore) // espero false 
+console.log (newScore === otherScore) // espero false 
 
 console.log(2 === '2')  // false
+
+// Concatenación
+
+const firstName = 'Pepe'
+const surName = 'González'
+const fullName = firstName + ' ' + surName // ojo lleva el espacio para separar nombre y apellido
+console.log (fullName)
+
+// template
+console.log (`Hola, soy ${firstName} ${surName}`)
+
+
+const a = 2
+const b = '2'
+
+console.log (a * b) //4
+console.log (+ +a + +b) //devuelve un 8, si le pongo el signo + delante lo convierte en nº
