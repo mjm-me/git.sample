@@ -71,3 +71,9 @@ const b = '2'
 
 console.log (a * b) //4
 console.log (+ +a + +b) //devuelve un 8, si le pongo el signo + delante lo convierte en nº
+
+
+
+
+let = 'Hola mundo'
+console.log("Hola mundo")
