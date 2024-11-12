@@ -198,21 +198,23 @@ render(`${value} es ${oddOrEven(value)}`); //pasamos el valor 23 porque he queri
 //...
 //17%16 !==0;
 //}
+console.log("empieza ejercicio 15");
 
 function isPrime(num) {
     if (!Number.isInteger(num) || num < 0) {
         return "El valor es válido";
     }
-    let isPrime = true;
 
     if (num < 2) isPrime = false;
+
+    //let isPrime = true; //lo puedo quitar si al final le digo return true
 
     for (let i = 2; i < num; i++) {
         if (num % i === 0) {
             return false;
         }
     }
-    return isPrime;
+    return true; //return isPrime;
 }
 
 console.log(0, isPrime(0) ? "Es primo" : "no es primo");
@@ -232,6 +234,8 @@ function rollDiceN(n) {
     console.log("Total:", accumlator);
 }
 rollDiceN(10);
+
+console.log("empieza ejercicio para Texto");
 
 // cuando sea primo te devuelvo un true
 const cad = "Hola que tal";
