@@ -1,79 +1,268 @@
-'use strict'
+//console.log('Index2 loaded')
 
-// sentencias
+//function greeting() {
+//const question = '¿Cómo te llamas?'
+//const name = prompt (question)
+//if(name !== null || name === ``) {
+//const response = `Hola, ${name}, qué tal estás`
+//alert(response)
+//}
+//}
 
-// expresiones
+//const button = document.querySelector('button')
+//button.addEventListener('click', greeting)
 
-// variables y datos
+//1. Imprime por consola el string 'Hello World'
+
+//primera solución
+console.log("Hello World");
+//segunda solución
+const greeting = "Hello World";
+console.log(greeting);
+
+//2.Declara una variable de las dos formas posibles, e imprime por consola los dos valores
+// Declarar una variable usando 'let'
+//let greeting1 = 'Hello World!'
+//console.log(saludo1)
+//Declarar una variable usando 'const'
+//const greeting2 = 'Bye, World!'
+//console.log(greeting1 + '' + greeting2)
+//que es igual que decir
+console.log(greeting1, greeting2);
+
+//3. Cambia ahora el valor de una de las dos variables e imprime por consola
+// Declarar una variable usando 'let'
+let greeting1 = "¡Hola mundo!";
+console.log(greeting1);
+// Cambiar el valor de la variable 'saludo1'
+greeting1 = "¡Hola de nuevo mundo!";
+console.log(greeting1);
+// Declarar una variable usando 'const'
+const greeting2 = "Hello world!";
+console.log(greeting2);
+
+//4. Crea dos variable numéricas e imprime el resultado de sumarlas por consola
+//let var1 = 2 //si cambiara sería let
+//let var2 = 3
+
+const a = 2;
+const b = 3;
+console.log(a + b);
+
+//5. Declara dos variables de tipo string. Imprime por consola el resultado de concatenarlas
+//solucion de clase
+const firstName = "Pepe";
+const surName = "Pérez";
+console.log(firstName + "" + surName);
+
+//primera solución
+const questionName = "¿Cómo te llamas?";
+let yourName = "Soy María Jesús";
+let completeGreeting = questionName + " " + yourName;
+console.log(completeGreeting);
+//segunda solución
+const questionSurName = "¿Y tu apellido?";
+let yourSurName = "Martín";
+let completeGreeting2 = `${questionSurName} ${yourSurName}`;
+console.log(completeGreeting2);
+
+//6. Crea una función que imprima por consola el string 'Hello World'
+function printGreeting() {
+    console.log("Hello World");
+}
+// tengo que llamar a la función para que imprima el mensaje
+printGreeting();
+
+//segunda solución
+function render(value) {
+    console.log(value);
+}
+render("Hello World...");
+
+//7. Crea una función que, al ser llamada, imprima por consola el resultado de la multiplicación de dos números introducidos como parámetros
+//primera solución
+const x = 2;
+const y = 5;
+function multiply() {
+    console.log(x * y);
+}
+multiply();
+
+// segunda función en clase, nos piden una función impura de cálculo que salga por pantalla
+function multiplication(a, b) {
+    console.log(a * b);
+}
+// Llamar a la función con dos números como argumentos
+multiplication(12, 5);
+
+//7b.
+function multi(a, b) {
+    return a * b;
+}
+console.log(multi(2, 4)); //espero que me devuelva 8
+// invócala e imprime por consola el resultado usando la función del ejercicio 6
+function multi(a, b) {
+    return a * b;
+}
+render(multi(2, 4));
+
+//8. Crea una función que imprima por consola el resultado de elevar al cubo un número dado como parámetro
+//resuelto en clase y devuelve el resultado
+function cube(a) {
+    const result = a ** 3:
+    return result;
+}
+render (cube(3)); //esperoun 27
 
 
-console.log("nuevo js para portfolio")
+//primera solución
+const c = 3;
+function riseNumber() {
+    console.log(c ** 3);
+}
+riseNumber();
 
-console.log("sabor a jamón")
-
-console.log(22, 'Pepe', true)
-console.log (22, typeof 22)
-console.log ('Pepe', typeof 'Pepe')
-consoile.log (true, typeof true)
-
-// se declaran con var - let - const
-
-let user
-let age
-let isStudent
-
-// asignacion
-
-user = 'Pepe'
-age = 22
-isStudent = true
+//segunda solución
+function riseNumber1(numero) {
+    console.log(numero ** 3);
+}
+riseNumber1(4); // Llamar a la función con un número como argumento
 
 
-// CONST
+//9. Crea una función que saque por consola el área de un rectángulo de dimensiones dadas como parámetro. (base, altura)
+//corregido en clase
+function rectangleArea (b, h) {
+    const area = b * h;
+    return area;
+}
+render (rectangleArea(3,4)); //12
 
-const course = `Java Script`
+function areaRectangleOrTriangle (b, h, IsRectangle) {
+    let area
+    if (isRectangle === true) {
+        area = b * h;
+    } else {
+        area = (b*h) / 2;
+    }
+    return area; //esparamos que dvuelva 7,5
+}
+render (areaRectangleOrTriangle(3, 5, false));
 
-// Da un error
-// course = 'Typescript'
+//vamos a mejorarlo
+function areaRectangleOrTriangle1 (b, h, IsRectangle) {
+    if (isRectangle) {
+        return  b * h;
+    }    
+    return (b * h) / 2; //esperamos que devuelva 7,5
+}
+render (areaRectangleOrTriangle1(3, 5, false)); //7,5
+render (areaRectangleOrTriangle1(3, 5, true); //15
 
-let emotionalState = 'sad'
-console.log (emotionalState)
+//vamos a mejorarlo con un operador ternario
+function areaRectangleOrTriangle2 (b, h, IsRectangle) {
+    return isRectangle ? b * h : (b * h) / 2
+}
 
-let score = 5 + 4
-// es igual que si yo escribo esto
-score = 9
-
-let newScore = 3 * score
-let otherScore = newScore
-newScore = 54
-
-console.log(newScore) // espero el valor 54
-console.log(otherScore) // espero 27
-
-console.log (newScore > otherScore) // espero true 
-console.log (newScore === otherScore) // espero false 
-
-console.log(2 === '2')  // false
-
-// Concatenación
-
-const firstName = 'Pepe'
-const surName = 'González'
-const fullName = firstName + ' ' + surName // ojo lleva el espacio para separar nombre y apellido
-console.log (fullName)
-
-// template
-console.log (`Hola, soy ${firstName} ${surName}`)
-
-
-const a = 2
-const b = '2'
-
-console.log (a * b) //4
-console.log (+ +a + +b) //devuelve un 8, si le pongo el signo + delante lo convierte en nº
+function calcularAreaRectangulo(base, altura) {
+    const area = base * altura;
+    console.log(area);
+} // Llamar a la función con las dimensiones del rectángulo
+calcularAreaRectangulo(5, 3);
 
 
+//10. Crea una función que imprima por consola un número al azar entre 0 y 10
+
+// corregido en clase
+//Math.random() número pseudo aleatorio entre 0 y 1
+function randomNumberOnetoTen() {
+    //const r = Math.random() * 10
+    //Math.trunc(r)
+    //return r;
+    return Math.trunc(Math.random() * 10);
+    //si no quiero que aparezca el 0
+    //return Math.trunc(Math.random() * 9 + 1);
+}
+render (randomNumberOnetoTen());
 
 
-let = 'Hola mundo'
-console.log("Hola mundo")
+//corregido por mi
+function numeroAlAzar() {
+    let numero = Math.floor(Math.random() * 11);
+    console.log(numero);
+}
+numeroAlAzar();
+
+
+
+//11. Adivina el número y Crea una función que primero guarde en una variable un número aleatorio del 1 al 10.
+// Después, pregunte al usuario a través de un prompt un número del 1 al 10.
+// Una vez recibida la respuesta, compare estos dos números.
+// Si los números coinciden, imprime por consola un string indicando que el usuario ha acertado, sino, imprime por consola que el usuario ha fallado seguido del número correcto.
+
+
+//corregido en clase como la primera función ya la he mos hecho en clase, no la tenemos que escribir de nuevo
+prompt ('Dime un número del 1 al 10')
+//quiero guardar el resultado del prompt en una variable, p.e., number
+const expected = randomNumberOnetoTen();
+const userOptionNumber = prompt ('Dime un número del 1 al 10');
+//primero tengo que comparar el número con el cadena de texto numero que yo meto en la ventana del navegador
+const isCorrect = expected === Number(userOptionNumber)
+// si los resultados coinciden 
+if(isCorrect) {
+    console.log('Has acertado');
+} else {
+    console.log(No acertaste, el número era $(expected)');
+}
+
+
+
+
+function app() {
+    const expected = randomNumberOnetoTen();
+    const userOptionNumber = prompt ('Dime un número del 1 al 10');
+    const isCorrect = expected === Number(userOptionNumber);
+
+    const result = isCorrect ? 'Has acertado' : 'No has acertado, el número era ${expected}';
+    render(result);
+}
+
+
+
+
+
+function adivinaElNumero() {
+    // Guardar un número aleatorio del 1 al 10 en una variable
+    const numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+    // Pedir al usuario que adivine un número del 1 al 10
+    const numeroUsuario = parseInt(prompt("Adivina el número (del 1 al 10):"));
+    // Comparar los números y mostrar el resultado
+    if (numeroUsuario === numeroAleatorio) {
+        console.log("¡Has acertado! El número era " + numeroAleatorio);
+    } else {
+        console.log("Has fallado. El número correcto era " + numeroAleatorio);
+    }
+}
+adivinaElNumero();
+
+//11. Adivina el número: Crea una función que primero guarde en una variable un número aleatorio del 1 al 10. Después, pregunte al usuario a través de un prompt un número del 1 al 10. Una vez recibida la respuesta, compare estos dos números. Si los números coinciden, imprime por consola un string indicando que el usuario ha acertado, sino, imprime por consola que el usuario ha fallado seguido del número correcto
+function adivinaElNumero() {
+    // Guardar un número aleatorio del 1 al 10 en una variable
+    const numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+    // Pedir al usuario que adivine un número del 1 al 10
+    const numeroUsuario = parseInt(prompt("Adivina el número (del 1 al 10):"));
+    // Comparar los números y mostrar el resultado
+    if (numeroUsuario === numeroAleatorio) {
+        console.log("¡Has acertado! El número era " + numeroAleatorio);
+    } else {
+        console.log("Has fallado. El número correcto era " + numeroAleatorio);
+    }
+}
+adivinaElNumero();
+
+//12. Crea una función que reciba un número como parámetro e imprima por consola si el número dado es par o impar.
+
+//13. Crea una función que reciba un parámetro de tipo string e imprima por consola el string revertido. (ejemplo: 'casa' => 'asac).
+
+//14. Crea una función que imprima por consola la tabla de multiplicar de un número introducido como parámetro.
+
+//15. Crea una función que reciba un número por parámetros e imprima por consola si el número recibido es un número primo.

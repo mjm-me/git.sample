@@ -1,5 +1,10 @@
 {
-    "files.exclude": {
-        "**/.git": false
-    }
+  "files.exclude": {
+    "**/.git": false
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "liveServer.settings.port": 5501,
+  "files.autoSave": "onFocusChange"
+
+  "cSpell.language": "en,es",
 }
