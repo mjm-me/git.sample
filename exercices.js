@@ -202,7 +202,7 @@ console.log("empieza ejercicio 15");
 
 function isPrime(num) {
     if (!Number.isInteger(num) || num < 0) {
-        return "El valor es válido";
+        return "El valor es no válido";
     }
 
     if (num < 2) isPrime = false;
@@ -217,10 +217,25 @@ function isPrime(num) {
     return true; //return isPrime;
 }
 
-console.log(0, isPrime(0) ? "Es primo" : "no es primo");
-console.log(1, isPrime(1) ? "Es primo" : "no es primo");
-console.log(2, isPrime(2) ? "Es primo" : "no es primo");
-console.log(9, isPrime(9) ? "Es primo" : "no es primo");
+function renderPrime(n) {
+    let result = isPrime(n);
+    if (typeof result === "boolean") {
+        result = result ? "Es primo" : "no es primo";
+    }
+    console.log(n, result);
+}
+
+renderPrime(-1);
+renderPrime(0);
+renderPrime(1);
+renderPrime(2);
+renderPrime(9);
+
+//console.log(-1, isPrime(-1) ? "Es primo" : "no es primo");
+//console.log(0, isPrime(0) ? "Es primo" : "no es primo");
+//console.log(1, isPrime(1) ? "Es primo" : "no es primo");
+//console.log(2, isPrime(2) ? "Es primo" : "no es primo");
+//console.log(9, isPrime(9) ? "Es primo" : "no es primo");
 
 // cuando sea primo te devuelvo un true
 function rollDiceN(n) {
@@ -246,3 +261,21 @@ for (let i = 0; i < cad.length; i++) {
     const element = cad[i];
     console.log(element);
 }
+
+// 13. Crea una función que reciba un parámetro de tipo string y devuelva  el string revertido. (ejemplo: 'casa' => 'asac).
+// Invócala e imprime por consola el resultado usando la función del ejercicio 6.
+
+function revertString(value) {
+    let accumulator = "";
+    for (let i = value.length - 1; i >= 0; i--) {
+        const iterator = value[i];
+        // console.log(element);
+        accumulator += iterator;
+    }
+    return accumulator;
+}
+
+console.log(revertString("perro"));
+
+// 14. Crea una función que imprima por consola la tabla de multiplicar de un número introducido como parámetro.
+// Mejora: utiliza una función independiente para el render
