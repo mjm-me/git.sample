@@ -279,3 +279,13 @@ console.log(revertString("perro"));
 
 // 14. Crea una función que imprima por consola la tabla de multiplicar de un número introducido como parámetro.
 // Mejora: utiliza una función independiente para el render
+function createMultiplicationTable (num) {
+    let accumlator = '';
+    for (let i = 0; i <= 10; i++) {
+        accumlator += `${num}` por `${i}` es `${num*i}
+        `;
+    }
+    return accumlator;
+}
+    
+console.table(createMultiplicationTable(5));
