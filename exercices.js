@@ -177,7 +177,7 @@ function oddOrEven(num) {
     // Si no es entero
     //programación defensiva, primero compruebo si el nº no es entero
     if (!Number.isInteger(num)) {
-        result "El número no es entero";
+        return "El número no es entero";
     }
     let result = "Impar";
     if (num % 2 === 0) {
@@ -186,4 +186,59 @@ function oddOrEven(num) {
     return result;
 }
 const value = 0.5;
-render('${value} es ${oddOrEven(value)}'); //pasamos el valor 23 porque he querido
+render(`${value} es ${oddOrEven(value)}`); //pasamos el valor 23 porque he querido
+
+//15. Crea una función que reciba un número por parámetros e imprima por consola si el número recibido es un número primo.
+//function checkNumber(num) {
+//if (... isPrimo) return true
+//else return false
+//para saber si es primo:
+///17
+//17%2 !== 0;
+//...
+//17%16 !==0;
+//}
+
+function isPrime(num) {
+    if (!Number.isInteger(num) || num < 0) {
+        return "El valor es válido";
+    }
+    let isPrime = true;
+
+    if (num < 2) isPrime = false;
+
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return isPrime;
+}
+
+console.log(0, isPrime(0) ? "Es primo" : "no es primo");
+console.log(1, isPrime(1) ? "Es primo" : "no es primo");
+console.log(2, isPrime(2) ? "Es primo" : "no es primo");
+console.log(9, isPrime(9) ? "Es primo" : "no es primo");
+
+// cuando sea primo te devuelvo un true
+function rollDiceN(n) {
+    let accumlator = 0;
+    for (let i = 0; i < n; i++) {
+        const dice = Math.trunc(Math.random() * 6) + 1;
+        console.log("Valor del dado:", dice);
+        //accumulator = accumulator + dice
+        accumlator += dice;
+    }
+    console.log("Total:", accumlator);
+}
+rollDiceN(10);
+
+// cuando sea primo te devuelvo un true
+const cad = "Hola que tal";
+console.log(cad.length); //le estoy preguntando que me de cuántas posiciones tiene esta cadena. Espero 12
+console.log(cad[3]); //espero letra a
+//como recorrer la cadena, con un bucle
+for (let i = 0; i < cad.length; i++) {
+    const element = cad[i];
+    console.log(element);
+}
