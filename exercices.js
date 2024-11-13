@@ -280,12 +280,27 @@ console.log(revertString("perro"));
 // 14. Crea una función que imprima por consola la tabla de multiplicar de un número introducido como parámetro.
 // Mejora: utiliza una función independiente para el render
 function createMultiplicationTable (num) {
-    let accumlator = '';
+    let accumulator = '';
     for (let i = 0; i <= 10; i++) {
-        accumlator += `${num}` por `${i}` es `${num*i}
+        accumulator += `${num}` por `${i}` es `${num*i}
         `;
     }
-    return accumlator;
+    return accumulator;
 }
     
 console.table(createMultiplicationTable(5));
+
+//Tirar
+function rollDiceU ntil(value)
+    let accumlator = 0;
+    for (let i = 0; true; i++) {
+        if(i===3) {
+            break;
+        }
+
+        const dice = Math.trunc(Math.random() * 6) + 1;
+        console.log("Valor del dado:", dice);
+        //accumulator = accumulator + dice
+        accumlator += dice;
+    }
+    console.log("Total:", accumlator);
