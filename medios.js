@@ -1,4 +1,4 @@
-// // 1. Crea una función que elimine el primer y último carácter de un string recibido por parámetros.
+// 1. Crea una función que elimine el primer y último carácter de un string recibido por parámetros.
 // las funciones son objetos y se pueden escribir function nmbrefunción()
 
 const removeLastFirst = function (value = "") {
@@ -13,6 +13,23 @@ const removeLastFirst = function (value = "") {
 console.log(removeLastFirst("Patata"));
 
 // 2. Escribe una función que reciba una palabra y revise si es un palíndromo.
+function isPalindrome(value) {
+    // Eliminar espacios, eliminar acentos y convertir a minúsculas
+    let cleanStrings = value
+        .replace(/\s+/g, "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+    // Invertir la palabra
+    let revertStrings = cleanStrings.split("").reverse().join("");
+    // Comprobar si la palabra original es igual a la invertida
+    return cleanStrings === revertStrings;
+}
+// Ejemplo de uso
+console.log(isPalindrome("Anita lava la tina")); // true
+console.log(isPalindrome("Dábale arroz a la zorra el abad")); // true
+console.log(isPalindrome("Son Robos o Sobornos")); // true
+console.log(isPalindrome("Hola Pepe")); // false
 
 // 3. Crea una función que cuente las vocales que contiene una palabra dada por parámetros.
 const countVocals = function (value = "") {
@@ -40,7 +57,51 @@ const countVocals1 = function (value = "") {
 };
 console.log(countVocals1("Murciélago")); //me devuelve 5 que son las 5 vocales
 
+console.log("ejercicio 4");
 // 4. Crea una función que verifique si una cadena de texto recibida por parámetros es un pangrama (contiene todas las letras del abecedario).
+function containAlphabet(value) {
+    const alphabets = "abcdefghijklmnopqrstuvwxyz";
+    const letras = new Set(value.toLowerCase().replace(/[^a-z]/g, ""));
+    return alphabets.split("").every((letra) => letras.has(letra));
+}
+// Ejemplo de uso
+console.log(
+    containAlphabet(
+        "Un jugoso zumo de piña y kiwi bien frío es exquisito y no lleva alcohol"
+    )
+); // true
+console.log(containAlphabet("zapato")); // false
+
+/**
+ * Función que indica si una cadena es Pangrama en JavaScript
+ * (método corto)
+ * @author parzibyte
+ */
+
+const esPangrama = (cadena) => {
+    const ALFABETO_MINUSCULAS = "abcdefghijklmnñopqrstuvwxy";
+    // Convertir a minúsculas
+    cadena = cadena.toLowerCase();
+    return Array.from(ALFABETO_MINUSCULAS).every((letra) =>
+        cadena.includes(letra)
+    );
+};
+
+// Probar método
+const CADENAS_PARA_PROBAR = [
+    "El cadáver de Wamba, rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo", //  No
+    "Hola", //  No
+    "aeiou", //  No
+    "parzibyte", //  No
+    "abcdefghijklmnñopqrstuvwxyz", //  Sí
+    "El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña tocaba el saxofón detrás del palenque de paja", //  Sí,
+    "abcdefghijklmnopqrstuvwxyz", // No, porque no lleva ñ
+    "Mi hijo degustó en el festival de bayas una extraña pizza de kiwi con queso", // Sí
+];
+
+CADENAS_PARA_PROBAR.forEach((cadena) => {
+    console.log(`¿'${cadena}' es pangrama? ${esPangrama(cadena)}`);
+});
 
 // 5. Escribe una función que compruebe si una cadena de texto contiene todas las vocales.
 
